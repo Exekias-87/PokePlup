@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PokeApiNet;
 using System.Diagnostics;
+using PokePiplup.ModelView;
 
 namespace PokePiplup.Page
 {
@@ -17,22 +18,9 @@ namespace PokePiplup.Page
         public ListPage()
         {
             InitializeComponent();
+            BindingContext = ListViewModel.Instance;
         }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            ConnectApi();
-        }
-        public async void ConnectApi()
-        {
-            PokeApiClient pokeClient = new PokeApiClient();
-            for (int i = 100; i < 120; i++)
-            {
-                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
-                Debug.WriteLine(pokemon.Name);
-            }
-
-        }
+   
 
 
     }

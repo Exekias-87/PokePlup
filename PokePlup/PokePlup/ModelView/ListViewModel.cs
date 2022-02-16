@@ -1,20 +1,53 @@
 ﻿using PokeApiNet;
+using PokePlup.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PokePiplup.ModelView
 {
     internal class ListViewModel : BaseViewModel
     {
+        #region Instance
         private static ListViewModel _instance = new ListViewModel();
         public static ListViewModel Instance { get { return _instance; } }
-        public ObservableCollection<Pokemon> ListeofPokemon
+
+        #endregion
+
+        public ObservableCollection<MyPokemon> ListeofPokemon
         {
-            get => GetValue<ObservableCollection<Pokemon>>();
+            get => GetValue<ObservableCollection<MyPokemon>>();
             set => SetValue(value);
         }
+
+        public ListViewModel()
+        {
+
+            ListeofPokemon = new ObservableCollection<MyPokemon>();
+            
+            InitList();
+
+        }
+
+        public async void InitList()
+        {
+            PokeApiClient pokeClient = new PokeApiClient();
+
+            for (int i = 1; i <= 20; i++)
+            {
+                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
+                MyPokemon mypokemon = new MyPokemon();
+                mypokemon.Nom = pokemon.Name;
+                ListeofPokemon.Add(mypokemon);
+            }
+
+        }
+        
+
 
     }
 }
