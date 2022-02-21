@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace PokePiplup.ModelView
                 Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
                 MyPokemon mypokemon = new MyPokemon();
                 mypokemon.Nom = pokemon.Name;
+                mypokemon.Type = pokemon.Types[0].Type.Name;
                 ListeofPokemon.Add(mypokemon);
             }
 

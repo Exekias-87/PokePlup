@@ -6,17 +6,32 @@
     <CollectionView ItemsSource="{Binding ListeofPokemon}">
 		<CollectionView.Header>
 			<Label Text="Liste des pokemons"
-			       TextColor="Black"
+			       TextColor="Purple"
 			       VerticalOptions="CenterAndExpand" 
-			       HorizontalOptions="CenterAndExpand"/>
+			       HorizontalOptions="CenterAndExpand"
+				   HorizontalTextAlignment="Center"
+			       FontSize="Title"
+			       Margin="15"/>
 		</CollectionView.Header>
 		<CollectionView.ItemTemplate>
 			<DataTemplate>
-				<Label Text="{Binding Nom}"
-				       TextColor="Black"
-				       VerticalOptions="CenterAndExpand" 
-				       HorizontalOptions="CenterAndExpand"/>
-			</DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="10">
+	                <Label Text="{Binding Nom}"
+	                       TextColor="Black"
+	                       FontSize="Large"
+	                       HorizontalTextAlignment="Center"
+	                       VerticalOptions="CenterAndExpand" 
+	                       HorizontalOptions="CenterAndExpand"/>	
+					<Label Text="{Binding Type}"
+					         TextColor="Gray"
+					         FontSize="Medium"
+					         HorizontalTextAlignment="Center"
+					         VerticalOptions="CenterAndExpand" 
+					         HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
 		</CollectionView.ItemTemplate>
 	</CollectionView>
 </ContentPage>
