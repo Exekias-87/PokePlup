@@ -38,12 +38,14 @@ namespace PokePiplup.ModelView
         {
             PokeApiClient pokeClient = new PokeApiClient();
 
-            for (int i = 1; i <= 20; i++)
+            for (int i = 100; i <= 120; i++)
             {
                 Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
                 MyPokemon mypokemon = new MyPokemon();
                 mypokemon.Nom = pokemon.Name;
-                //mypokemon.Type = pokemon.Types[0].Type.Name;
+                mypokemon.Type = pokemon.Types[0].Type.Name;
+                if (pokemon.Types.Count >1) mypokemon.Type2 = pokemon.Types[1].Type.Name;
+                mypokemon.image = pokemon.Sprites.FrontDefault;
                 ListeofPokemon.Add(mypokemon);
             }
 

@@ -15,22 +15,34 @@
 		</CollectionView.Header>
 		<CollectionView.ItemTemplate>
 			<DataTemplate>
-                <ViewCell>
-                    <StackLayout Margin="10">
-	                <Label Text="{Binding Nom}"
-	                       TextColor="Black"
-	                       FontSize="Large"
-	                       HorizontalTextAlignment="Center"
-	                       VerticalOptions="CenterAndExpand" 
-	                       HorizontalOptions="CenterAndExpand"/>	
-					<Label Text="{Binding Type}"
-					         TextColor="Gray"
-					         FontSize="Medium"
-					         HorizontalTextAlignment="Center"
-					         VerticalOptions="CenterAndExpand" 
-					         HorizontalOptions="CenterAndExpand"/>
+				<FlexLayout Margin="10"
+				            AlignItems="Center"
+				            JustifyContent="Center">
+                    <StackLayout >
+	                    <Image Source="{Binding image}" WidthRequest="100" HeightRequest="100"></Image>
                     </StackLayout>
-                </ViewCell>
+                    <StackLayout Margin="50, 0, 30, 0">
+	                    <Label Text="{Binding Nom}"
+	                           TextColor="Black"
+	                           FontSize="Large"
+	                           HorizontalTextAlignment="Center"
+	                           VerticalOptions="CenterAndExpand" 
+	                           HorizontalOptions="CenterAndExpand"/>
+	                    <Label Text="{Binding Type}"
+	                           TextColor="Red"
+	                           FontSize="Medium"
+	                           HorizontalTextAlignment="Center"
+	                           VerticalOptions="CenterAndExpand" 
+	                           HorizontalOptions="CenterAndExpand"/>
+	                    <Label Text="{Binding Type2}"
+	                           TextColor="Red"
+	                           FontSize="Medium"
+	                           HorizontalTextAlignment="Center"
+	                           VerticalOptions="CenterAndExpand" 
+	                           HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+					
+                </FlexLayout>
             </DataTemplate>
 		</CollectionView.ItemTemplate>
 	</CollectionView>
