@@ -43,7 +43,7 @@ namespace PokePiplup.ModelView
                 Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
                 MyPokemon mypokemon = new MyPokemon();
                 mypokemon.Nom = pokemon.Name;
-                mypokemon.Type = pokemon.Types[0].Type.Name;
+                //mypokemon.Type = pokemon.Types[0].Type.Name;
                 ListeofPokemon.Add(mypokemon);
             }
 
