@@ -46,6 +46,7 @@ namespace PokePiplup.ModelView
                 mypokemon.Type = pokemon.Types[0].Type.Name;
                 if (pokemon.Types.Count >1) mypokemon.Type2 = pokemon.Types[1].Type.Name;
                 mypokemon.image = pokemon.Sprites.FrontDefault;
+                //mypokemon.Description = pokemon.characteristic
                 ListeofPokemon.Add(mypokemon);
             }
 

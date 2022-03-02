@@ -3,12 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokePiplup.Page.HomePage">
 	<ContentPage.Content>
-		<StackLayout>
-			<Label Text="Je suis un rowlet..."
+        <FlexLayout JustifyContent="Center"
+                    Direction="Column"
+                    Margin="50, 20, 50, 0"
+                    >
+            <Label Text="POKE PLUP"/>
+            <Image Source="piplup.png"
+                   Margin="0,0,0,70"/>
+            <Label Text="Bienvenue dans le monde extraordinaire des pokémons."
 			       TextColor="Black"
-			       FontSize="Header"
-			       VerticalOptions="CenterAndExpand" 
-			       HorizontalOptions="CenterAndExpand" />
-		</StackLayout>
+			       FontSize="Body"
+			       HorizontalTextAlignment="Center"
+                   Margin="0, 0, 0, 30"/>
+            <Label Text="Consulter et ajoutées d'inombrables pokémons"
+			       TextColor="Black"
+			       FontSize="Body"
+			       HorizontalTextAlignment="Center"/>
+            
+		</FlexLayout>
 	</ContentPage.Content>
 </ContentPage>

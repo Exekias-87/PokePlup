@@ -88,7 +88,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\piplup.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PokePlup\PokePlup.csproj">
       <Project>{526DBDFF-B720-4794-816E-1804DFCC417C}</Project>
