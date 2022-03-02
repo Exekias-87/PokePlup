@@ -14,7 +14,7 @@ namespace PokePlup.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.0.11")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
 	public partial class Resource
 	{
 		
@@ -16674,6 +16674,9 @@ namespace PokePlup.Droid
 			
 			// aapt resource value: 0x7F070093
 			public const int tooltip_frame_light = 2131165331;
+			
+			// aapt resource value: 0x7F070094
+			public const int wallpaper = 2131165332;
 			
 			static Drawable()
 			{

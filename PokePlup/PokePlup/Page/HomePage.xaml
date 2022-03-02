@@ -1,23 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PokePiplup.Page.HomePage">
+             x:Class="PokePiplup.Page.HomePage"
+             BackgroundImageSource="wallpaper.jpg">
 	<ContentPage.Content>
-        <FlexLayout JustifyContent="Center"
-                    Direction="Column"
-                    Margin="50, 20, 50, 0"
-                    >
-            <Label Text="POKE PLUP"/>
+        <FlexLayout Direction="Column"
+                    Margin="50, 50, 50, 0">
+            <Label Text="POKE PLUP"
+                   FontSize="55"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Cyan"/>
             <Image Source="piplup.png"
-                   Margin="0,0,0,70"/>
+                   Margin="0,70,0,70"/>
             <Label Text="Bienvenue dans le monde extraordinaire des pokémons."
 			       TextColor="Black"
-			       FontSize="Body"
+			       FontSize="20"
 			       HorizontalTextAlignment="Center"
                    Margin="0, 0, 0, 30"/>
             <Label Text="Consulter et ajoutées d'inombrables pokémons"
 			       TextColor="Black"
-			       FontSize="Body"
+			       FontSize="20"
 			       HorizontalTextAlignment="Center"/>
             
 		</FlexLayout>
