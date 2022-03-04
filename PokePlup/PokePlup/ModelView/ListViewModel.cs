@@ -1,4 +1,5 @@
 ﻿using PokeApiNet;
+using PokePlup;
 using PokePlup.Model;
 using System;
 using System.Collections.Generic;
@@ -30,28 +31,72 @@ namespace PokePiplup.ModelView
 
             ListeofPokemon = new ObservableCollection<MyPokemon>();
             
+
             InitList();
 
         }
 
         public async void InitList()
         {
-            PokeApiClient pokeClient = new PokeApiClient();
+            PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
 
-            for (int i = 100; i <= 120; i++)
+            
+
+            if (pokemonDB.isEmpty().Result)
             {
-                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(i));
-                MyPokemon mypokemon = new MyPokemon();
-                mypokemon.Nom = pokemon.Name;
-                mypokemon.Type = pokemon.Types[0].Type.Name;
-                if (pokemon.Types.Count >1) mypokemon.Type2 = pokemon.Types[1].Type.Name;
-                mypokemon.image = pokemon.Sprites.FrontDefault;
-                //mypokemon.Description = pokemon.characteristic
-                ListeofPokemon.Add(mypokemon);
+                this.fillPokemonDatabase();
+            }
+            else
+            {
+                this.fillPokemonList();
+            }
+        }
+
+        public async void fillPokemonDatabase()
+        {
+            PokeApiClient pokeClient = new PokeApiClient();
+            PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
+
+            var random = new Random();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                string type2="";
+                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(random.Next(1, 908)));
+                PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
+                if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
+
+                await pokemonDB.SaveItemAsync(new MyPokemon
+                {
+                    ID = pokemon.Id,
+                    Nom = pokemon.Name,
+                    Type = pokemon.Types[0].Type.Name,
+                    Type2 = type2,
+                    image = pokemon.Sprites.FrontDefault,
+                    Description = species.FlavorTextEntries.Find((flavor)=>flavor.Language.Name=="fr").FlavorText,
+                    HP = pokemon.Stats[0].BaseStat,
+                    ATK = pokemon.Stats[1].BaseStat,
+                    DEF = pokemon.Stats[2].BaseStat,
+                    SATK = pokemon.Stats[3].BaseStat,
+                    SDEF = pokemon.Stats[4].BaseStat,
+                }) ;
             }
 
+            this.fillPokemonList();
         }
-        
+
+
+        public async void fillPokemonList()
+        {
+            PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
+            List<MyPokemon> list = await pokemonDB.GetPokemonsAsync();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                MyPokemon pokemon = list[i];
+                ListeofPokemon.Add(pokemon);
+            }
+        }
 
 
     }
