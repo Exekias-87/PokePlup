@@ -19,5 +19,10 @@ namespace PokePiplup.Page
 
             InitializeComponent();
         }
+
+        private void nom_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

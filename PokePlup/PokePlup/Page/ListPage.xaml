@@ -17,7 +17,8 @@
 			<DataTemplate>
 				<FlexLayout Margin="10"
 				            AlignItems="Center"
-				            JustifyContent="Center">
+				            JustifyContent="Center"
+				            BackgroundColor="GreenYellow">
                     <StackLayout >
 	                    <Image Source="{Binding image}" WidthRequest="100" HeightRequest="100"></Image>
                     </StackLayout>

@@ -3,12 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokePiplup.Page.AddPage">
 	<ContentPage.Content>
-		<StackLayout>
-			<Label Text="FreeFrood"
-			       FontSize="Title"
-			       TextColor="Pink"
-			       VerticalOptions="CenterAndExpand" 
-			       HorizontalOptions="CenterAndExpand" />
-		</StackLayout>
+		<StackLayout BackgroundColor="GhostWhite">
+
+            <Label HorizontalTextAlignment="Center"
+                   FontSize="40"
+                   Margin="20"
+                   TextColor="Purple">Créer un pokémon : </Label>
+
+            <StackLayout Margin="20">
+
+                <Editor x:Name="nom" Text="Nom du pokémon" TextColor="White"
+	                    BackgroundColor="#2c3e50"
+	                    PlaceholderColor="Red"/>
+
+                <Editor x:Name="type" Text="Type" TextColor="White"
+	                    BackgroundColor="#2c3e50"
+	                    PlaceholderColor="Red"/>
+
+                <Editor x:Name="type2" Text="Type Secondaire" TextColor="White"
+	                    BackgroundColor="#2c3e50"
+	                    PlaceholderColor="Red"/>
+
+                <Editor x:Name="description" Text="Description du pokémon" TextColor="White"
+	                    BackgroundColor="#2c3e50"
+	                    PlaceholderColor="Red"/>
+
+            </StackLayout>
+
+            <StackLayout Margin="20">
+                <Slider x:Name="hp"
+	                    Maximum="100"
+	                    Minimum="1"
+	                    Value="{Binding FontSize}"
+	                    MinimumTrackColor="Red"/>
+
+	            <Label Text="{Binding Source={x:Reference hp},
+                                  Path=Value,
+                                  StringFormat='HP = {0:F0}'}"
+	                   HorizontalTextAlignment="Center" />
+
+	            <Slider x:Name="atk"
+	                    Maximum="100"
+	                    Minimum="1"
+	                    Value="{Binding FontSize}"
+	                    MinimumTrackColor="Red"/>
+
+	            <Label Text="{Binding Source={x:Reference atk},
+                                  Path=Value,
+                                  StringFormat='Atk = {0:F0}'}"
+	                   HorizontalTextAlignment="Center" />
+	            <Slider x:Name="def"
+	                    Maximum="100"
+	                    Minimum="1"
+	                    Value="{Binding FontSize}"
+	                    MinimumTrackColor="Red"/>
+
+	            <Label Text="{Binding Source={x:Reference def},
+                                  Path=Value,
+                                  StringFormat='Def = {0:F0}'}"
+	                   HorizontalTextAlignment="Center" />
+
+	            <Slider x:Name="satk"
+	                    Maximum="100"
+	                    Minimum="1"
+	                    Value="{Binding FontSize}"
+	                    MinimumTrackColor="Red"/>
+
+	            <Label Text="{Binding Source={x:Reference satk},
+                                  Path=Value,
+                                  StringFormat='SpecialAtk = {0:F0}'}"
+	                   HorizontalTextAlignment="Center" />
+	            <Slider x:Name="sdef"
+	                    Maximum="100"
+	                    Minimum="1"
+	                    Value="{Binding FontSize}"
+	                    MinimumTrackColor="Red"/>
+
+	            <Label Text="{Binding Source={x:Reference sdef},
+                                  Path=Value,
+                                  StringFormat='SpecialDef = {0:F0}'}"
+	                   HorizontalTextAlignment="Center" />
+            </StackLayout>
+			
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
