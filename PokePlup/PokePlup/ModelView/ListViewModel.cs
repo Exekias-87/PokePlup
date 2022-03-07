@@ -69,7 +69,7 @@ namespace PokePiplup.ModelView
                 await pokemonDB.SaveItemAsync(new MyPokemon
                 {
                     ID = pokemon.Id,
-                    Nom = pokemon.Name,
+                    Nom = species.Names.Find(name => name.Language.Name.Equals("fr")).Name,
                     Type = pokemon.Types[0].Type.Name,
                     Type2 = type2,
                     image = pokemon.Sprites.FrontDefault,
