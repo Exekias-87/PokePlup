@@ -31,12 +31,14 @@ namespace PokePiplup.Page
                 Type = type.Text,
                 Type2 = type2.Text,
                 Description = description.Text,
-                HP = Int32.Parse(hp.ToString()), 
-                ATK = Int32.Parse(atk.ToString()),
-                DEF = Int32.Parse(def.ToString()),
-                SATK = Int32.Parse(satk.ToString()),
-                SDEF = Int32.Parse(sdef.ToString()),    
+                HP = (int)hp.Value, 
+                ATK = (int)atk.Value,
+                DEF = (int)def.Value,
+                SATK = (int)satk.Value,
+                SDEF = (int)sdef.Value,    
             });
+            await DisplayAlert("Detail ", nom.Text + " " + (int)hp.Value, "OK");
+            await Navigation.PushAsync(new AddPage());
         }
     }
 }

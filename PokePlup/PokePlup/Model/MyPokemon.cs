@@ -7,7 +7,7 @@ namespace PokePlup.Model
 {
     public class MyPokemon
     {
-        [PrimaryKey]
+        [PrimaryKey,AutoIncrement]
         public int ID { get; set; }
         public string Nom { get; set; }
         public string image { get; set; }
