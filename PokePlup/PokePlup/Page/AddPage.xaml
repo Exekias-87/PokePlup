@@ -35,12 +35,14 @@
 	                    Maximum="100"
 	                    Minimum="1"
 	                    Value="{Binding FontSize}"
-	                    MinimumTrackColor="Red"/>
+	                    MinimumTrackColor="Red"
+                        />
 
 	            <Label Text="{Binding Source={x:Reference hp},
                                   Path=Value,
                                   StringFormat='HP = {0:F0}'}"
-	                   HorizontalTextAlignment="Center" />
+	                   HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
 
 	            <Slider x:Name="atk"
 	                    Maximum="100"
@@ -51,7 +53,8 @@
 	            <Label Text="{Binding Source={x:Reference atk},
                                   Path=Value,
                                   StringFormat='Atk = {0:F0}'}"
-	                   HorizontalTextAlignment="Center" />
+	                   HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
 	            <Slider x:Name="def"
 	                    Maximum="100"
 	                    Minimum="1"
@@ -61,7 +64,8 @@
 	            <Label Text="{Binding Source={x:Reference def},
                                   Path=Value,
                                   StringFormat='Def = {0:F0}'}"
-	                   HorizontalTextAlignment="Center" />
+	                   HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
 
 	            <Slider x:Name="satk"
 	                    Maximum="100"
@@ -72,7 +76,9 @@
 	            <Label Text="{Binding Source={x:Reference satk},
                                   Path=Value,
                                   StringFormat='SpecialAtk = {0:F0}'}"
-	                   HorizontalTextAlignment="Center" />
+	                   HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+                
 	            <Slider x:Name="sdef"
 	                    Maximum="100"
 	                    Minimum="1"
@@ -82,9 +88,15 @@
 	            <Label Text="{Binding Source={x:Reference sdef},
                                   Path=Value,
                                   StringFormat='SpecialDef = {0:F0}'}"
-	                   HorizontalTextAlignment="Center" />
+	                   HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
             </StackLayout>
-			
+
+            <Button Text="Validate"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="AddPokemon" />
+
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -20,8 +20,5 @@ namespace PokePiplup.Page
             InitializeComponent();
             BindingContext = ListViewModel.Instance;
         }
-   
-
-
     }
 }
