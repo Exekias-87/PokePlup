@@ -4,16 +4,23 @@
        x:Class="PokePiplup.MainPage"
        BackgroundColor="DarkGoldenrod"
        TitleColor="white"
-       UnselectedColor="Gray">
+       UnselectedColor="Gray"
+       NavBarIsVisible="False">
 
-	<TabBar>
-		<ShellContent Icon="home.png" Title="Home">
+	<TabBar x:Name="TAB">
+		<ShellContent Icon="home.png" Title="Home"
+		              Route="Home"
+		              x:Name="HOME">
 			<page:HomePage/>
 		</ShellContent>
-		<ShellContent Icon="add.png" Title="Add">
+		<ShellContent Icon="add.png" Title="Add"
+		              Route="Add"
+		              x:Name="ADD">
 			<page:AddPage/>
 		</ShellContent>
-		<ShellContent Icon="liste.png" Title="List">
+		<ShellContent Icon="liste.png" Title="List"
+		              Route="List"
+		              x:Name="LIST">
 			<page:ListPage/>
 		</ShellContent>
 	</TabBar>

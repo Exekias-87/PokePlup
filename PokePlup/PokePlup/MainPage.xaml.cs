@@ -13,6 +13,12 @@ namespace PokePiplup
         public MainPage()
         {
             InitializeComponent();
+            InitPageHome();
+        }
+
+        private void InitPageHome()
+        {
+            TAB.CurrentItem = HOME;
         }
     }
 }
