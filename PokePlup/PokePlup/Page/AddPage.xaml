@@ -95,7 +95,7 @@
             <Button Text="Validate"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                Clicked="AddPokemon" />
+                Clicked="AddPokemonAsync" />
 
         </StackLayout>
 	</ContentPage.Content>

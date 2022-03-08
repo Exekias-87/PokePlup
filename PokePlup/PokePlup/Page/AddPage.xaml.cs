@@ -21,7 +21,7 @@ namespace PokePiplup.Page
             InitializeComponent();
         }
 
-        private async Task AddPokemonAsync(object sender, EventArgs e)
+        public async void AddPokemonAsync(object sender, EventArgs e)
         {
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
 
