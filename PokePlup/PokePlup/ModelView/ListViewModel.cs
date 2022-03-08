@@ -52,6 +52,11 @@ namespace PokePiplup.ModelView
             }
         }
 
+        public void addPokemon(MyPokemon pokemon)
+        {
+            ListeofPokemon.Add(pokemon);
+        }
+
         public async void fillPokemonDatabase()
         {
             PokeApiClient pokeClient = new PokeApiClient();

@@ -23,22 +23,29 @@ namespace PokePiplup.Page
 
         public async void AddPokemonAsync(object sender, EventArgs e)
         {
+            var vm= ListViewModel.Instance;
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
 
-            await pokemonDB.SaveItemAsync( new MyPokemon
-            {
-                Nom = nom.Text,
-                Type = type.Text,
-                Type2 = type2.Text,
-                Description = description.Text,
-                HP = (int)hp.Value, 
-                ATK = (int)atk.Value,
-                DEF = (int)def.Value,
-                SATK = (int)satk.Value,
-                SDEF = (int)sdef.Value,    
-            });
+
+
+           MyPokemon pokemon= new MyPokemon
+           {
+               Nom = nom.Text,
+               Type = type.Text,
+               Type2 = type2.Text,
+               Description = description.Text,
+               HP = (int)hp.Value,
+               ATK = (int)atk.Value,
+               DEF = (int)def.Value,
+               SATK = (int)satk.Value,
+               SDEF = (int)sdef.Value,
+           };
             await DisplayAlert("Detail ", nom.Text + " " + (int)hp.Value, "OK");
-            await Navigation.PushAsync(new AddPage());
+            await pokemonDB.SaveItemAsync(pokemon); 
+            vm.addPokemon(pokemon);
+
+            await Shell.Current.GoToAsync($"//List", true);
+
         }
     }
 }
