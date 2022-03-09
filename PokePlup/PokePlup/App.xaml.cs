@@ -3,6 +3,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PokePiplup;
+using PokePlup.Page;
 
 namespace PokePlup
 {

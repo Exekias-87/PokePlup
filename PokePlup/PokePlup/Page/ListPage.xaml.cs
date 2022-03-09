@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using PokeApiNet;
 using System.Diagnostics;
 using PokePiplup.ModelView;
+using PokePlup.Page;
 
 namespace PokePiplup.Page
 {
@@ -20,5 +21,12 @@ namespace PokePiplup.Page
             InitializeComponent();
             BindingContext = ListViewModel.Instance;            
         }
+        public async void SeeMore(object sender, EventArgs e)
+        {
+            
+            
+            Navigation.PushModalAsync(new DetailsPage());
+        }
+        
     }
 }

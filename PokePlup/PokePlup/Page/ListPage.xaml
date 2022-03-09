@@ -20,10 +20,11 @@
 				            JustifyContent="Center"
 				            BackgroundColor="GreenYellow">
                     <StackLayout >
-	                    <Image Source="{Binding image}" WidthRequest="100" HeightRequest="100"></Image>
+                        <Image Source="{Binding image}" WidthRequest="100" HeightRequest="100" />
                     </StackLayout>
                     <StackLayout Margin="50, 0, 30, 0">
-	                    <Label Text="{Binding Nom}"
+                        
+                        <Label Text="{Binding Nom}"
 	                           TextColor="Black"
 	                           FontSize="Large"
 	                           HorizontalTextAlignment="Center"
@@ -41,8 +42,10 @@
 	                           HorizontalTextAlignment="Center"
 	                           VerticalOptions="CenterAndExpand" 
 	                           HorizontalOptions="CenterAndExpand"/>
+                        
                     </StackLayout>
-					
+					<Button Text="Voir plus"
+							Clicked="SeeMore"/>
                 </FlexLayout>
             </DataTemplate>
 		</CollectionView.ItemTemplate>

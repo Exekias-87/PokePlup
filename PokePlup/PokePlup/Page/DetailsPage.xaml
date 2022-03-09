@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokePlup.Page.DetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Retour" Clicked="Return"/>
+            <Label Text="Pokemon"
+                   HorizontalTextAlignment="Center"
+                   FontSize="50"
+                   Margin="30, 10, 30, 10"/>
+            
+            <Image Source="piplup.png"/>
+            
+            <FlexLayout JustifyContent="SpaceEvenly"
+                        Margin="10, 20, 10, 20">
+                <Label Text="Lumière" HorizontalTextAlignment="Center"/>
+                <Label Text="Ombre" HorizontalTextAlignment="Center"/>
+            </FlexLayout>
+            
+
+            <Label Text="Ici on met la super description alors on fait beaucoup de texte histoire de faire comme si on avait une vrai"
+                   HorizontalTextAlignment="Center"
+                   Margin="30, 20, 20, 20"
+                   FontSize="16"/>
+
+            <Label Text="Hp = 9"  
+                   HorizontalTextAlignment="Center" 
+                   Margin="10, 0, 10, 0"/>
+            
+            <FlexLayout JustifyContent="SpaceAround"
+                        Margin="10, 20, 10, 20">
+                <Label Text="Attaque = 9"/>
+                <Label Text="Defense = 9"/>
+            </FlexLayout>
+
+            <FlexLayout JustifyContent="SpaceAround"
+                        Margin="10, 20, 10, 20">
+                <Label Text="Attaque spécial = 9"/>
+                <Label Text="Defense spécial = 9"/>
+            </FlexLayout>
+
+
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

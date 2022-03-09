@@ -46,6 +46,21 @@ namespace PokePiplup.Page
 
             await Shell.Current.GoToAsync($"//List", true);
 
+            RenitializeValue();
+            
+
+        }
+        public void RenitializeValue()
+        {
+            nom.Text = "Nom du pokémon";
+            type.Text = "Type";
+            type2.Text = "Type Secondaire";
+            description.Text = "Description du pokémon";
+            hp.Value = 1;
+            atk.Value = 1;
+            satk.Value = 1;
+            sdef.Value = 1;
+            def.Value = 1;
         }
     }
 }
