@@ -13,11 +13,11 @@ namespace PokePlup.Page
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
-        public DetailsPage(/*MyPokemon pokemon*/)
+        public DetailsPage(MyPokemon pokemon)
         {
              
             InitializeComponent();
-            //BindingContext = pokemon;
+            BindingContext = pokemon;
         }
 
         private void Return(object sender, EventArgs e)

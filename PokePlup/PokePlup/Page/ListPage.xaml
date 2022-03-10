@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:modelview="clr-namespace:PokePiplup.ModelView"
              x:Class="PokePiplup.Page.ListPage">
 
-    <CollectionView ItemsSource="{Binding ListeofPokemon}">
+    <CollectionView ItemsSource="{Binding ListeofPokemon}"
+                    SelectionChanged="SeeMore"
+                    SelectionMode="Single">
 		<CollectionView.Header>
 			<Label Text="Liste des pokemons"
 			       TextColor="Purple"
@@ -44,9 +46,7 @@
 	                           HorizontalOptions="CenterAndExpand"/>
                         
                     </StackLayout>
-					<Button Text="Voir plus"
-							Clicked="SeeMore"/>
-                </FlexLayout>
+				</FlexLayout>
             </DataTemplate>
 		</CollectionView.ItemTemplate>
 	</CollectionView>
