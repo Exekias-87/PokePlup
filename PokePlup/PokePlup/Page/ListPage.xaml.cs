@@ -10,6 +10,7 @@ using PokeApiNet;
 using System.Diagnostics;
 using PokePiplup.ModelView;
 using PokePlup.Page;
+using PokePlup.Model;
 
 namespace PokePiplup.Page
 {
@@ -21,11 +22,19 @@ namespace PokePiplup.Page
             InitializeComponent();
             BindingContext = ListViewModel.Instance;            
         }
-        public async void SeeMore(object sender, EventArgs e)
+
+
+        public async void SeeMore(object sender, SelectionChangedEventArgs e)
         {
+            MyPokemon pokemon = (e.CurrentSelection.FirstOrDefault() as MyPokemon);
+            if (pokemon == null)
+            {
+                return;
+            }
+
+            (sender as CollectionView).SelectedItem = null;
             
-            
-            Navigation.PushModalAsync(new DetailsPage());
+            await Navigation.PushModalAsync(new DetailsPage(pokemon));
         }
         
     }
