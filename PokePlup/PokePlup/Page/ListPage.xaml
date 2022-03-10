@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:modelview="clr-namespace:PokePiplup.ModelView"
-             x:Class="PokePiplup.Page.ListPage">
+             x:Class="PokePiplup.Page.ListPage"
+             BackgroundColor="CadetBlue">
 
     <CollectionView ItemsSource="{Binding ListeofPokemon}"
                     SelectionChanged="SeeMore"
@@ -13,39 +14,27 @@
 			       HorizontalOptions="CenterAndExpand"
 				   HorizontalTextAlignment="Center"
 			       FontSize="Title"
-			       Margin="15"/>
+			       Padding="20"
+			       Margin="5"/>
 		</CollectionView.Header>
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2"></GridItemsLayout>
+        </CollectionView.ItemsLayout>
 		<CollectionView.ItemTemplate>
-			<DataTemplate>
+			<DataTemplate >
+
+				
 				<FlexLayout Margin="10"
 				            AlignItems="Center"
 				            JustifyContent="Center"
-				            BackgroundColor="GreenYellow">
-                    <StackLayout >
-                        <Image Source="{Binding image}" WidthRequest="100" HeightRequest="100" />
-                    </StackLayout>
-                    <StackLayout Margin="50, 0, 30, 0">
-                        
-                        <Label Text="{Binding Nom}"
-	                           TextColor="Black"
-	                           FontSize="Large"
-	                           HorizontalTextAlignment="Center"
-	                           VerticalOptions="CenterAndExpand" 
-	                           HorizontalOptions="CenterAndExpand"/>
-	                    <Label Text="{Binding Type}"
-	                           TextColor="Red"
-	                           FontSize="Medium"
-	                           HorizontalTextAlignment="Center"
-	                           VerticalOptions="CenterAndExpand" 
-	                           HorizontalOptions="CenterAndExpand"/>
-	                    <Label Text="{Binding Type2}"
-	                           TextColor="Red"
-	                           FontSize="Medium"
-	                           HorizontalTextAlignment="Center"
-	                           VerticalOptions="CenterAndExpand" 
-	                           HorizontalOptions="CenterAndExpand"/>
-                        
-                    </StackLayout>
+							Direction="Column">
+					<Image Source="{Binding image}" WidthRequest="150" HeightRequest="150" />
+					<Label Text="{Binding Nom}"
+						   TextColor="Purple"
+					       FontSize="Large"
+					       HorizontalTextAlignment="Center"
+					       VerticalOptions="CenterAndExpand" 
+					       HorizontalOptions="CenterAndExpand"/>
 				</FlexLayout>
             </DataTemplate>
 		</CollectionView.ItemTemplate>
