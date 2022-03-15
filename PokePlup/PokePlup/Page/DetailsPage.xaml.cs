@@ -15,7 +15,6 @@ namespace PokePlup.Page
     {
         public DetailsPage(MyPokemon pokemon)
         {
-             
             InitializeComponent();
             BindingContext = pokemon;
         }
