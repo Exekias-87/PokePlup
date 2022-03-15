@@ -4,7 +4,12 @@
              x:Class="PokePlup.Page.DetailsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Retour" Clicked="Return"/>
+
+
+	        <Button Text="Retour" Clicked="Return"
+	                CornerRadius="100"/>
+
+
             <Label Text="{Binding Nom}"
                    HorizontalTextAlignment="Center"
                    FontSize="50"
@@ -16,31 +21,72 @@
             
             <FlexLayout JustifyContent="SpaceEvenly"
                         Margin="10, 20, 10, 20">
-                <Label Text="{Binding Type}" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Type2}" HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding Type}" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Label Text="{Binding Type2}" HorizontalTextAlignment="Center" FontSize="20"/>
             </FlexLayout>
             
 
             <Label Text="{Binding Description}"
                    HorizontalTextAlignment="Center"
                    Margin="30, 20, 20, 20"
-                   FontSize="16"/>
+                   FontSize="15"/>
 
-            <Label Text="{Binding HP}"  
-                   HorizontalTextAlignment="Center" 
-                   Margin="10, 0, 10, 0"/>
-            
-            <FlexLayout JustifyContent="SpaceAround"
-                        Margin="10, 20, 10, 20">
-                <Label Text="{Binding ATK}"/>
-                <Label Text="{Binding DEF}"/>
-            </FlexLayout>
 
-            <FlexLayout JustifyContent="SpaceAround"
-                        Margin="10, 20, 10, 20">
-                <Label Text="{Binding SDEF}"/>
-                <Label Text="{Binding SATK}"/>
-            </FlexLayout>
+	        <Grid BackgroundColor="Cyan"
+	              RowSpacing="5"
+	              ColumnSpacing="0"
+	              Padding="50"
+	              Margin="20">
+		        <Grid.RowDefinitions>
+			        <RowDefinition Height="Auto" />
+			        <RowDefinition Height="Auto" />
+			        <RowDefinition Height="Auto" />
+			        <RowDefinition Height="Auto" />
+			        <RowDefinition Height="Auto" />
+		        </Grid.RowDefinitions>
+
+		        <Grid.ColumnDefinitions >
+			        <ColumnDefinition Width="*" />
+			        <ColumnDefinition Width="*" />
+		        </Grid.ColumnDefinitions>
+
+		        <Grid.Resources>
+			        <Style TargetType="Label">
+				        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+			        </Style>
+		        </Grid.Resources>
+
+                    <Label Text="HP"
+		               Grid.Row="0" Grid.Column="0" />
+
+                    <Label Text="{Binding HP}"
+					   Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="ATK"
+		               Grid.Row="1" Grid.Column="0" />
+
+                    <Label Text="{Binding ATK}"
+		               Grid.Row="1" Grid.Column="1"/>
+
+                    <Label Text="DEF"
+		               Grid.Row="2" Grid.Column="0" />
+
+                    <Label Text="{Binding DEF}"
+		               Grid.Row="2" Grid.Column="1"/>
+
+                    <Label Text="SATK"
+		               Grid.Row="3" Grid.Column="0" />
+
+                    <Label Text="{Binding SATK}"
+		               Grid.Row="3" Grid.Column="1"/>
+
+                    <Label Text="SDEF"
+		               Grid.Row="4" Grid.Column="0" />
+
+                    <Label Text="{Binding SDEF}"
+		               Grid.Row="4" Grid.Column="1"/>
+
+	        </Grid>
 
 
         </StackLayout>

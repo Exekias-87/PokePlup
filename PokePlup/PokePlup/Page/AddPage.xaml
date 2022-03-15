@@ -16,13 +16,57 @@
 	                    BackgroundColor="#2c3e50"
 	                    PlaceholderColor="Red"/>
 
-                <Editor x:Name="type" Text="Type" TextColor="White"
-	                    BackgroundColor="#2c3e50"
-	                    PlaceholderColor="Red"/>
 
-                <Editor x:Name="type2" Text="Type Secondaire" TextColor="White"
-	                    BackgroundColor="#2c3e50"
-	                    PlaceholderColor="Red"/>
+                <Picker x:Name="type" Title="Feu"
+                        BackgroundColor="#2c3e50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>FEU</x:String>
+	                        <x:String>EAU</x:String>
+	                        <x:String>OMBRE</x:String>
+                            <x:String>TENEBRE</x:String>
+	                        <x:String>ELECTRIQUE</x:String>
+	                        <x:String>DRAGON</x:String>
+	                        <x:String>PLANTE</x:String>
+	                        <x:String>FEE</x:String>
+	                        <x:String>SOL</x:String>
+	                        <x:String>ROCHE</x:String>
+	                        <x:String>PSY</x:String>
+	                        <x:String>ACIER</x:String>
+	                        <x:String>NORMAL</x:String>
+	                        <x:String>VOL</x:String>
+	                        <x:String>COMBAT</x:String>
+	                        <x:String>GLACE</x:String>
+	                        <x:String>INSECTE</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Picker x:Name="type2" Title="Aucun"
+                        BackgroundColor="#2c3e50">
+	                <Picker.ItemsSource>
+		                <x:Array Type="{x:Type x:String}">
+                            <x:String>AUCUN</x:String>
+			                <x:String>FEU</x:String>
+			                <x:String>EAU</x:String>
+			                <x:String>OMBRE</x:String>
+			                <x:String>TENEBRE</x:String>
+			                <x:String>ELECTRIQUE</x:String>
+			                <x:String>DRAGON</x:String>
+			                <x:String>PLANTE</x:String>
+			                <x:String>FEE</x:String>
+			                <x:String>SOL</x:String>
+			                <x:String>ROCHE</x:String>
+			                <x:String>PSY</x:String>
+			                <x:String>ACIER</x:String>
+			                <x:String>NORMAL</x:String>
+			                <x:String>VOL</x:String>
+			                <x:String>COMBAT</x:String>
+			                <x:String>GLACE</x:String>
+			                <x:String>INSECTE</x:String>
+		                </x:Array>
+	                </Picker.ItemsSource>
+                </Picker>
 
                 <Editor x:Name="description" Text="Description du pokémon" TextColor="White"
 	                    BackgroundColor="#2c3e50"
@@ -92,10 +136,11 @@
                        TextColor="Black"/>
             </StackLayout>
 
-            <Button Text="Validate"
+            <Button Text="Valider"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                Clicked="AddPokemonAsync" />
+                Clicked="AddPokemonAsync"
+                CornerRadius="100"/>
 
         </StackLayout>
 	</ContentPage.Content>

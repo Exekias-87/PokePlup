@@ -25,14 +25,23 @@ namespace PokePiplup.Page
         {
             var vm= ListViewModel.Instance;
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
+            string Type2;
+
+            if (type2.SelectedItem.ToString().ToLower() == "aucun")
+            {
+                Type2 = null;
+            }
+            else
+            {
+                Type2 = type2.SelectedItem.ToString().ToLower();
+            }
 
 
-
-           MyPokemon pokemon= new MyPokemon
-           {
+            MyPokemon pokemon = new MyPokemon
+            {
                Nom = nom.Text,
-               Type = type.Text,
-               Type2 = type2.Text,
+               Type = type.SelectedItem.ToString().ToLower(),
+               Type2 = Type2,
                Description = description.Text,
                HP = (int)hp.Value,
                ATK = (int)atk.Value,
@@ -53,8 +62,8 @@ namespace PokePiplup.Page
         public void RenitializeValue()
         {
             nom.Text = "Nom du pokémon";
-            type.Text = "Type";
-            type2.Text = "Type Secondaire";
+            type.SelectedItem = null;
+            type2.SelectedItem = null;
             description.Text = "Description du pokémon";
             hp.Value = 1;
             atk.Value = 1;
