@@ -49,21 +49,19 @@ namespace PokePiplup.Page
                SATK = (int)satk.Value,
                SDEF = (int)sdef.Value,
            };
-            await DisplayAlert("Detail ", nom.Text + " " + (int)hp.Value, "OK");
+            await DisplayAlert("Pokemon ajouté : ", nom.Text + " " , "OK");
             await pokemonDB.SaveItemAsync(pokemon); 
             vm.addPokemon(pokemon);
 
             await Shell.Current.GoToAsync($"//List", true);
 
             RenitializeValue();
-            
-
         }
         public void RenitializeValue()
         {
             nom.Text = "Nom du pokémon";
-            type.SelectedItem = null;
-            type2.SelectedItem = null;
+            type.SelectedItem = "NORMAL";
+            type2.SelectedItem = "AUCUN";
             description.Text = "Description du pokémon";
             hp.Value = 1;
             atk.Value = 1;

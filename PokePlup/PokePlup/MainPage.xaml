@@ -2,23 +2,23 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:page="clr-namespace:PokePiplup.Page"
        x:Class="PokePiplup.MainPage"
-       BackgroundColor="ForestGreen"
+       BackgroundColor="DodgerBlue"
        TitleColor="white"
-       UnselectedColor="Cyan"
+       UnselectedColor="DarkSlateGray"
        NavBarIsVisible="False">
 
 	<TabBar x:Name="TAB">
-		<ShellContent Icon="home.png" Title="Home"
+		<ShellContent Icon="home.png" Title="Acceuil"
 		              Route="Home"
 		              x:Name="HOME">
 			<page:HomePage/>
 		</ShellContent>
-		<ShellContent Icon="add.png" Title="Add"
+		<ShellContent Icon="add.png" Title="Ajouter"
 		              Route="Add"
 		              x:Name="ADD">
 			<page:AddPage/>
 		</ShellContent>
-		<ShellContent Icon="liste.png" Title="List"
+		<ShellContent Icon="liste.png" Title="Liste"
 		              Route="List"
 		              x:Name="LIST">
 			<page:ListPage/>

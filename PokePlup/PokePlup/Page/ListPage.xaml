@@ -2,20 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:modelview="clr-namespace:PokePiplup.ModelView"
              x:Class="PokePiplup.Page.ListPage"
-             BackgroundColor="CadetBlue">
+             BackgroundColor="#403f3e">
 
     <CollectionView ItemsSource="{Binding ListeofPokemon}"
                     SelectionChanged="SeeMore"
                     SelectionMode="Single">
 		<CollectionView.Header>
 			<Label Text="Liste des pokemons"
-			       TextColor="Purple"
+			       TextColor="WhiteSmoke"
 			       VerticalOptions="CenterAndExpand" 
 			       HorizontalOptions="CenterAndExpand"
 				   HorizontalTextAlignment="Center"
-			       FontSize="Title"
-			       Padding="20"
-			       Margin="5"/>
+			       FontSize="40"
+                   Padding="30"/>
 		</CollectionView.Header>
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2"></GridItemsLayout>
@@ -30,7 +29,7 @@
 							Direction="Column">
 					<Image Source="{Binding image}" WidthRequest="150" HeightRequest="150" />
 					<Label Text="{Binding Nom}"
-						   TextColor="Purple"
+						   TextColor="WhiteSmoke"
 					       FontSize="Large"
 					       HorizontalTextAlignment="Center"
 					       VerticalOptions="CenterAndExpand" 
