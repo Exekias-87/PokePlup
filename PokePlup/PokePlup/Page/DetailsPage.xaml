@@ -5,74 +5,70 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#403f3e">
 
-
-	        <Button Text="Retour" Clicked="Return"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    TextColor="WhiteSmoke"
-                    WidthRequest="140"
-                    Padding="15"
-                    BackgroundColor="#bf8a3d"
-	                CornerRadius="100"/>
-
-
-            <Label Text="{Binding Nom}"
+	        <Label Text="{Binding Nom}"
                    HorizontalTextAlignment="Center"
-                   FontSize="50"
-                   Margin="30, 10, 30, 10"
+                   FontSize="55"
+                   Margin="30, 30, 30, 10"
                    TextColor="WhiteSmoke"/>
             
             <Image Source="{Binding image}"
-                   WidthRequest="200"
-                   HeightRequest="200"/>
+                   WidthRequest="220"
+                   HeightRequest="220"/>
             
             <FlexLayout JustifyContent="SpaceEvenly"
-                        Margin="10, 20, 10, 20">
-                <Label Text="{Binding Type}" HorizontalTextAlignment="Center" FontSize="20" TextColor="WhiteSmoke"/>
-                <Label Text="{Binding Type2}" HorizontalTextAlignment="Center" FontSize="20" TextColor="WhiteSmoke"/>
+                        Margin="10, 10, 10, 20">
+                <Label Text="{Binding Type}" HorizontalTextAlignment="Center" FontSize="22" TextColor="WhiteSmoke"/>
+                <Label Text="{Binding Type2}" HorizontalTextAlignment="Center" FontSize="22" TextColor="WhiteSmoke"/>
             </FlexLayout>
             
 
             <Label Text="{Binding Description}"
                    HorizontalTextAlignment="Center"
                    Margin="30, 20, 20, 20"
-                   FontSize="15"
+                   FontSize="18"
                    TextColor="WhiteSmoke"/>
 
-            <StackLayout Margin="50, 0, 50, 0">
-                <FlexLayout>
-                    <Label Text="HP" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+            <StackLayout>
+                <FlexLayout JustifyContent="Center">
+                    <Label FontSize="18" Text="HP" TextColor="WhiteSmoke" Margin="0, 10, 50, 0"/>
 
-                    <Label Text="{Binding HP}" TextColor="WhiteSmoke"/>
+                    <Label FontSize="18" Text="{Binding HP}" TextColor="WhiteSmoke" Margin="0, 10, 0, 0"/>
                 </FlexLayout>
 
-                <FlexLayout>
-                    <Label Text="ATK" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+                <FlexLayout JustifyContent="Center">
+                    <Label FontSize="18" Text="ATK" TextColor="WhiteSmoke" Margin="0, 5, 50, 0"/>
 
-                    <Label Text="{Binding ATK}" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+                    <Label FontSize="18" Text="{Binding ATK}" TextColor="WhiteSmoke" Margin="0, 5, 0, 0"/>
                 </FlexLayout>
 
-                <FlexLayout>
-                    <Label Text="DEF" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+                <FlexLayout JustifyContent="Center">
+                    <Label FontSize="18" Text="DEF" TextColor="WhiteSmoke" Margin="0, 5, 50, 0"/>
 
-                    <Label Text="{Binding DEF}" TextColor="WhiteSmoke"/>
+                    <Label FontSize="18" Text="{Binding DEF}" TextColor="WhiteSmoke" Margin="0, 5, 0, 0"/>
                 </FlexLayout>
 
-                <FlexLayout>
-                    <Label Text="SATK" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+                <FlexLayout JustifyContent="Center">
+                    <Label FontSize="18" Text="SATK" TextColor="WhiteSmoke" Margin="0, 5, 50, 0"/>
 
-                    <Label Text="{Binding SATK}" TextColor="WhiteSmoke"/>
+                    <Label FontSize="18" Text="{Binding SATK}" TextColor="WhiteSmoke" Margin="0, 5, 0, 0"/>
                 </FlexLayout>
 
-                <FlexLayout>
-                    <Label Text="SDEF" TextColor="WhiteSmoke" Margin="0, 0, 50, 0"/>
+                <FlexLayout JustifyContent="Center">
+                    <Label FontSize="18" Text="SDEF" TextColor="WhiteSmoke" Margin="0, 5, 50, 0"/>
 
-                    <Label Text="{Binding SDEF}" TextColor="WhiteSmoke"/>
+                    <Label FontSize="18" Text="{Binding SDEF}" TextColor="WhiteSmoke" Margin="0, 5, 0, 0"/>
                 </FlexLayout>
             </StackLayout>
-            
+
+            <ImageButton Source="cross.jpg" Clicked="Return"
+                        Margin="0,20,20,0"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        WidthRequest="50"
+                        Padding="15"
+                        BackgroundColor="#bf8a3d"
+	                    CornerRadius="100"/>
         </StackLayout>
-        
-        
+
     </ContentPage.Content>
 </ContentPage>
