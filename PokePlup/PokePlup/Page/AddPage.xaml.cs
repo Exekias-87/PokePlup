@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -42,6 +38,7 @@ namespace PokePiplup.Page
                Nom = nom.Text,
                Type = type.SelectedItem.ToString(),
                Type2 = Type2,
+               CouleurType=CouleurPrincipalPokemon(type.SelectedItem.ToString()),
                Description = description.Text,
                HP = (int)hp.Value,
                ATK = (int)atk.Value,
@@ -70,6 +67,31 @@ namespace PokePiplup.Page
             def.Value = 1;
         }
 
+        public string CouleurPrincipalPokemon(string Type)
+        {
+            switch (Type)
+            {
+                case "Normal": return "#ADA594";
+                case "Poison": return "#B55AA5";
+                case "Plante": return "#7BCE52";
+                case "Psy": return "#FF73A5";
+                case "Sol": return "#D6B55A";
+                case "Glace": return "#5ACEE7";
+                case "Feu": return "#F75231";
+                case "Roche": return "#BDA55A";
+                case "Dragon": return "#8858F6";
+                case "Eau": return "#399CFF";
+                case "Insecte": return "#ADBD21";
+                case "Tenebre": return "#735A4A";
+                case "Combat": return "#A55239";
+                case "Spectre": return "#6363B5";
+                case "Acier": return "#ADADC6";
+                case "Vol": return "#9CADF7";
+                case "Electrik": return "#FFC631";
+                case "Fee": return "#E09AE3";
+                default: return null;
+            }
+        }
 
         /*private async void OnPickImageClick(object sender, EventArgs args)
         {
