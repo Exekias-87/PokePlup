@@ -72,7 +72,7 @@
                 <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d" >
                     
                     <Editor x:Name="description" TextColor="WhiteSmoke"
-	                    PlaceholderColor="WhiteSmoke"  Placeholder="Nom du pokémon"/>
+	                    PlaceholderColor="WhiteSmoke"  Placeholder="Descriptif du pokémon"/>
                 </Frame>
             </StackLayout>
 
