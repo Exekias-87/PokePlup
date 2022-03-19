@@ -55,7 +55,7 @@ namespace PokePiplup.ModelView
         {
 
             PokeApiClient pokeClient = new PokeApiClient();
-            //PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
+            PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
             //String nameEnglish = species.Names.Find(myname => myname.Language.Name.Equals("en")).Name,
 
             string type2 = "";
@@ -80,6 +80,8 @@ namespace PokePiplup.ModelView
                 SDEF = pokemon.Stats[4].BaseStat,
             };
 
+
+            await pokemonDB.SaveItemAsync(MyPokemon);
             ListeofPokemon.Add(MyPokemon);
         }
 
