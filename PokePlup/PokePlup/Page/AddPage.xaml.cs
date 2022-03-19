@@ -5,16 +5,23 @@ using Xamarin.Forms.Xaml;
 using PokePiplup.ModelView;
 using PokePlup.Model;
 using PokePlup;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace PokePiplup.Page
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPage : ContentPage
     {
+        private MediaFile Image { get; set; }
+        private MyPokemon currentPokemon;
+
         public AddPage()
         {
 
             InitializeComponent();
+            type.SelectedItem = "NORMAL";
+            type2.SelectedItem = "AUCUN";
         }
 
         public async void AddPokemonAsync(object sender, EventArgs e)
@@ -46,6 +53,9 @@ namespace PokePiplup.Page
                SATK = (int)satk.Value,
                SDEF = (int)sdef.Value,
            };
+            pokemon.Image = this.Image == null ? currentPokemon.Image : this.Image.Path;
+
+
             await DisplayAlert("Pokemon ajouté : ", nom.Text + " " , "OK");
             await pokemonDB.SaveItemAsync(pokemon); 
             vm.addPokemon(pokemon);
@@ -56,15 +66,16 @@ namespace PokePiplup.Page
         }
         public void RenitializeValue()
         {
-            nom.Text = "";
+            nom.Text = null;
             type.SelectedItem = "NORMAL";
             type2.SelectedItem = "AUCUN";
-            description.Text = "";
+            description.Text = null;
             hp.Value = 1;
             atk.Value = 1;
             satk.Value = 1;
             sdef.Value = 1;
             def.Value = 1;
+            imagePicker.Source = "image.png";
         }
 
         public string CouleurPrincipalPokemon(string Type)
@@ -93,14 +104,14 @@ namespace PokePiplup.Page
             }
         }
 
-        /*private async void OnPickImageClick(object sender, EventArgs args)
+        private async void OnPickImageClick(object sender, EventArgs args)
         {
             this.Image = await CrossMedia.Current.PickPhotoAsync();
 
             if (this.Image == null) return;
 
             imagePicker.Source = ImageSource.FromStream(() => this.Image.GetStream());
-        }*/
+        }
 
     }
 }

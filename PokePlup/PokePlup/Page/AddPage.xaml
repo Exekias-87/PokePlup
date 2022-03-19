@@ -3,149 +3,154 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokePiplup.Page.AddPage">
 	<ContentPage.Content>
-        <StackLayout BackgroundColor="#403f3e">
+        <ScrollView>
+            <StackLayout BackgroundColor="#403f3e">
 
-            <Label HorizontalTextAlignment="Center"
+                <Label HorizontalTextAlignment="Center"
                    FontSize="40"
                    Margin="20"
-                   TextColor="WhiteSmoke"> Créer un pokémon </Label>
+                   TextColor="WhiteSmoke">Créer un pokémon</Label>
 
-            <StackLayout Margin="20">
+                <StackLayout Margin="20">
 
-                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
-                    <Editor x:Name="nom" Placeholder="Nom du pokémon" TextColor="WhiteSmoke" PlaceholderColor="WhiteSmoke"/>
-                </Frame>
-                
-                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
-                    <Picker x:Name="type" Title="Type 1" TextColor="WhiteSmoke">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Feu</x:String>
-                                <x:String>Eau</x:String>
-	                            <x:String>Tenebre</x:String>
-                                <x:String>Electrik</x:String>
-                                <x:String>Dragon</x:String>
-                                <x:String>Plante</x:String>
-                                <x:String>Fee</x:String>
-                                <x:String>Sol</x:String>
-                                <x:String>Roche</x:String>
-                                <x:String>Psy</x:String>
-                                <x:String>Acier</x:String>
-                                <x:String>Normal</x:String>
-                                <x:String>Vol</x:String>
-                                <x:String>Combat</x:String>
-                                <x:String>Glace</x:String>
-                                <x:String>Insecte</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.SelectedIndex>12</Picker.SelectedIndex>
-                    </Picker>
-                </Frame>
+                    <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
+                        <Editor x:Name="nom" Placeholder="Nom du pokémon" TextColor="WhiteSmoke" PlaceholderColor="WhiteSmoke"/>
+                    </Frame>
 
-                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
-                    <Picker x:Name="type2" Title="Type 2" TextColor="WhiteSmoke">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>AUCUN</x:String>
-	                            <x:String>Feu</x:String>
-	                            <x:String>Eau</x:String>
-	                            <x:String>Tenebre</x:String>
-	                            <x:String>Electrik</x:String>
-	                            <x:String>Dragon</x:String>
-	                            <x:String>Plante</x:String>
-	                            <x:String>Fee</x:String>
-	                            <x:String>Sol</x:String>
-	                            <x:String>Roche</x:String>
-	                            <x:String>Psy</x:String>
-	                            <x:String>Acier</x:String>
-	                            <x:String>Normal</x:String>
-	                            <x:String>Vol</x:String>
-	                            <x:String>Combat</x:String>
-	                            <x:String>Glace</x:String>
-	                            <x:String>Insecte</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
-                    </Picker>
-                </Frame>
+                    <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
+                        <Picker x:Name="type" Title="Type 1" TextColor="WhiteSmoke">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Feu</x:String>
+                                    <x:String>Eau</x:String>
+                                    <x:String>Tenebre</x:String>
+                                    <x:String>Electrik</x:String>
+                                    <x:String>Dragon</x:String>
+                                    <x:String>Plante</x:String>
+                                    <x:String>Fee</x:String>
+                                    <x:String>Sol</x:String>
+                                    <x:String>Roche</x:String>
+                                    <x:String>Psy</x:String>
+                                    <x:String>Acier</x:String>
+                                    <x:String>Normal</x:String>
+                                    <x:String>Vol</x:String>
+                                    <x:String>Combat</x:String>
+                                    <x:String>Glace</x:String>
+                                    <x:String>Insecte</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                            <Picker.SelectedIndex>12</Picker.SelectedIndex>
+                        </Picker>
+                    </Frame>
 
-                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d" >
-                    
-                    <Editor x:Name="description" TextColor="WhiteSmoke"
+                    <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
+                        <Picker x:Name="type2" Title="Type 2" TextColor="WhiteSmoke">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>AUCUN</x:String>
+                                    <x:String>Feu</x:String>
+                                    <x:String>Eau</x:String>
+                                    <x:String>Tenebre</x:String>
+                                    <x:String>Electrik</x:String>
+                                    <x:String>Dragon</x:String>
+                                    <x:String>Plante</x:String>
+                                    <x:String>Fee</x:String>
+                                    <x:String>Sol</x:String>
+                                    <x:String>Roche</x:String>
+                                    <x:String>Psy</x:String>
+                                    <x:String>Acier</x:String>
+                                    <x:String>Normal</x:String>
+                                    <x:String>Vol</x:String>
+                                    <x:String>Combat</x:String>
+                                    <x:String>Glace</x:String>
+                                    <x:String>Insecte</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                        </Picker>
+                    </Frame>
+
+                    <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d" >
+
+                        <Editor x:Name="description" TextColor="WhiteSmoke"
 	                    PlaceholderColor="WhiteSmoke"  Placeholder="Descriptif du pokémon"/>
-                </Frame>
-            </StackLayout>
+                    </Frame>
+                </StackLayout>
 
-            <StackLayout Margin="20">
-                <Slider x:Name="hp"
-	                    Maximum="100"
+                <StackLayout Margin="20">
+                    <Slider x:Name="hp"
+	                    Maximum="350"
 	                    Minimum="1"
 	                    MinimumTrackColor="DodgerBlue"
                         MaximumTrackColor="WhiteSmoke"
                         ThumbColor ="WhiteSmoke"
                         />
 
-	            <Label Text="{Binding Source={x:Reference hp},
+                    <Label Text="{Binding Source={x:Reference hp},
                                   Path=Value,
                                   StringFormat='HP = {0:F0}'}"
 	                   HorizontalTextAlignment="Center"
                        TextColor="White"/>
 
-	            <Slider x:Name="atk"
-	                    Maximum="100"
+                    <Slider x:Name="atk"
+	                    Maximum="200"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
                         ThumbColor ="WhiteSmoke"/>
 
-	            <Label Text="{Binding Source={x:Reference atk},
+                    <Label Text="{Binding Source={x:Reference atk},
                                   Path=Value,
                                   StringFormat='Atk = {0:F0}'}"
 	                   HorizontalTextAlignment="Center"
                        TextColor="White"/>
-                
-	            <Slider x:Name="def"
-	                    Maximum="100"
+
+                    <Slider x:Name="def"
+	                    Maximum="250"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
                         ThumbColor ="WhiteSmoke"/>
 
-	            <Label Text="{Binding Source={x:Reference def},
+                    <Label Text="{Binding Source={x:Reference def},
                                   Path=Value,
                                   StringFormat='Def = {0:F0}'}"
 	                   HorizontalTextAlignment="Center"
                        TextColor="White"/>
 
-	            <Slider x:Name="satk"
-	                    Maximum="100"
+                    <Slider x:Name="satk"
+	                    Maximum="200"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
                         ThumbColor ="WhiteSmoke"/>
 
-	            <Label Text="{Binding Source={x:Reference satk},
+                    <Label Text="{Binding Source={x:Reference satk},
                                   Path=Value,
                                   StringFormat='SpecialAtk = {0:F0}'}"
 	                   HorizontalTextAlignment="Center"
                        TextColor="White"/>
-                
-	            <Slider x:Name="sdef"
-	                    Maximum="100"
+
+                    <Slider x:Name="sdef"
+	                    Maximum="250"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
                         ThumbColor ="WhiteSmoke"/>
 
-	            <Label Text="{Binding Source={x:Reference sdef},
+                    <Label Text="{Binding Source={x:Reference sdef},
                                   Path=Value,
                                   StringFormat='SpecialDef = {0:F0}'}"
 	                   HorizontalTextAlignment="Center"
                        TextColor="White"/>
-            </StackLayout>
+                </StackLayout>
 
-             
-            <Button Text="Valider"
+                <StackLayout Margin="10,0,0,0" HorizontalOptions="Center" Orientation="Horizontal"  >
+                    <ImageButton x:Name="imagePicker" Source="image.png" Clicked="OnPickImageClick" HeightRequest="100" WidthRequest="100" BackgroundColor="#403f3e"/>
+                </StackLayout>
+
+
+                <Button Text="Valider"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="AddPokemonAsync"
@@ -155,6 +160,7 @@
                 Padding="15"
                 BackgroundColor="#bf8a3d"/>
 
-        </StackLayout>
-	</ContentPage.Content>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
