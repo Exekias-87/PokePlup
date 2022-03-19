@@ -20,6 +20,8 @@ namespace PokePiplup.Page
         {
 
             InitializeComponent();
+            type.SelectedItem = "NORMAL";
+            type2.SelectedItem = "AUCUN";
         }
 
         public async void AddPokemonAsync(object sender, EventArgs e)
@@ -73,6 +75,7 @@ namespace PokePiplup.Page
             satk.Value = 1;
             sdef.Value = 1;
             def.Value = 1;
+            imagePicker.Source = "image.png";
         }
 
         public string CouleurPrincipalPokemon(string Type)

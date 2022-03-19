@@ -79,7 +79,7 @@
 
                 <StackLayout Margin="20">
                     <Slider x:Name="hp"
-	                    Maximum="100"
+	                    Maximum="350"
 	                    Minimum="1"
 	                    MinimumTrackColor="DodgerBlue"
                         MaximumTrackColor="WhiteSmoke"
@@ -93,7 +93,7 @@
                        TextColor="White"/>
 
                     <Slider x:Name="atk"
-	                    Maximum="100"
+	                    Maximum="200"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
@@ -106,7 +106,7 @@
                        TextColor="White"/>
 
                     <Slider x:Name="def"
-	                    Maximum="100"
+	                    Maximum="250"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
@@ -119,7 +119,7 @@
                        TextColor="White"/>
 
                     <Slider x:Name="satk"
-	                    Maximum="100"
+	                    Maximum="200"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
@@ -132,7 +132,7 @@
                        TextColor="White"/>
 
                     <Slider x:Name="sdef"
-	                    Maximum="100"
+	                    Maximum="250"
 	                    Minimum="1"
                         MaximumTrackColor="WhiteSmoke"
 	                    MinimumTrackColor="DodgerBlue"
@@ -146,7 +146,7 @@
                 </StackLayout>
 
                 <StackLayout Margin="10,0,0,0" HorizontalOptions="Center" Orientation="Horizontal"  >
-                    <ImageButton x:Name="imagePicker" Source="picker.png" Clicked="OnPickImageClick" HeightRequest="150" WidthRequest="150"/>
+                    <ImageButton x:Name="imagePicker" Source="image.png" Clicked="OnPickImageClick" HeightRequest="100" WidthRequest="100" BackgroundColor="#403f3e"/>
                 </StackLayout>
 
 
