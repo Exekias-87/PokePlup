@@ -20,10 +20,8 @@
             <GridItemsLayout Orientation="Vertical" Span="2"></GridItemsLayout>
         </CollectionView.ItemsLayout>
 		<CollectionView.ItemTemplate>
-			<DataTemplate >
-
-				
-				<FlexLayout Margin="10"
+            <DataTemplate >
+                <FlexLayout Margin="10"
 				            AlignItems="Center"
 				            JustifyContent="Center"
 							Direction="Column">

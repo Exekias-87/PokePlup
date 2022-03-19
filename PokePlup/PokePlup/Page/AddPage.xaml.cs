@@ -59,10 +59,10 @@ namespace PokePiplup.Page
         }
         public void RenitializeValue()
         {
-            nom.Text = "Nom du pokémon";
+            nom.Text = "";
             type.SelectedItem = "NORMAL";
             type2.SelectedItem = "AUCUN";
-            description.Text = "Description du pokémon";
+            description.Text = "";
             hp.Value = 1;
             atk.Value = 1;
             satk.Value = 1;

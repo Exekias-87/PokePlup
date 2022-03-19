@@ -13,7 +13,7 @@
             <StackLayout Margin="20">
 
                 <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
-                    <Editor x:Name="nom" Text="Nom du pokémon" TextColor="WhiteSmoke" PlaceholderColor="Red"/>
+                    <Editor x:Name="nom" Placeholder="Nom du pokémon" TextColor="WhiteSmoke" PlaceholderColor="WhiteSmoke"/>
                 </Frame>
                 
                 <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
@@ -71,9 +71,10 @@
                     </Picker>
                 </Frame>
 
-                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d">
-                    <Editor x:Name="description" Text="Description du pokémon" TextColor="WhiteSmoke"
-	                    PlaceholderColor="Red"/>
+                <Frame CornerRadius="8" Padding="2" BackgroundColor="#bf8a3d" >
+                    
+                    <Editor x:Name="description" TextColor="WhiteSmoke"
+	                    PlaceholderColor="WhiteSmoke"  Placeholder="Nom du pokémon"/>
                 </Frame>
             </StackLayout>
 

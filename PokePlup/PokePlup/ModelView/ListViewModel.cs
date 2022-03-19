@@ -103,6 +103,22 @@ namespace PokePiplup.ModelView
             }
         }
 
+        public List<string> GetPokemonApi(string NomPokemon)
+        {
+            PokeApiClient pokeClient = new PokeApiClient();
+
+            Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(NomPokemon)).Result;
+            PokemonSpecies pokemonSpecies = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
+            //Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(NomPokemon)).Result;
+
+            List<string> myList = new List<string>();
+            myList.Add(pokemonSpecies.Names.Find(name => name.Language.Name.Equals("fr")).Name);
+            myList.Add(pokemon.Sprites.FrontDefault);
+
+
+            return myList;
+        }
+
 
     }
 }
