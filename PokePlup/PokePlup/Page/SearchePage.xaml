@@ -6,20 +6,32 @@
     <ContentPage.Content>
         
       <StackLayout>
-            <Frame CornerRadius="30" BackgroundColor="#bf8a3d" Margin="20" Padding="15">
-                <Entry x:Name="searchBar" Text="" Placeholder="Faites votre recherche"/>
+            <Frame CornerRadius="30" BackgroundColor="#bf8a3d" Margin="30" Padding="15">
+                <Entry x:Name="searchBar" Text="" Placeholder="Faites votre recherche" />
             </Frame>
             <Button Text="Rechercher" 
                     BackgroundColor="#bf8a3d" 
                     Padding="6" 
                     CornerRadius="40" 
                     HorizontalOptions="Center"
-                    WidthRequest="200"
-                    Clicked="Rechercher"/>
+                    WidthRequest="180"
+                    Clicked="Rechercher"
+                    TextColor="WhiteSmoke"/>
 
             <Label Text="Résultat" HorizontalOptions="Center" FontSize="28" Margin="0,50,0,0" TextColor="White" FontAttributes="Bold"/>
             <Label HorizontalOptions="Center" x:Name="NamePoke" FontSize="23" Margin="0,50,0,0" TextColor="White"/>
             <Image x:Name="ImagePoke" WidthRequest="100" HeightRequest="100"/>
+
+            <Button Text="Ajouter ce pokemon a la liste de pokemon" 
+                    BackgroundColor="#bf8a3d" 
+                    Clicked="AjoutPokemonBd" 
+                    Margin="0,40,0,0"
+                    Padding="15" 
+                    CornerRadius="40" 
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    FontSize="15"
+                    TextColor="WhiteSmoke"/>
         </StackLayout>
         
   </ContentPage.Content>

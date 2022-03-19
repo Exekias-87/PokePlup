@@ -17,7 +17,6 @@ namespace PokePlup.Page
         public SearchePage()
         {
             InitializeComponent();
-            //BindingContext = ;
            
         }
 
@@ -29,6 +28,15 @@ namespace PokePlup.Page
             
             NamePoke.Text = PokemonName;
             ImagePoke.Source = PokemonImage;
+        }
+        private void AjoutPokemonBd(object sender, EventArgs e)
+        {
+            var vm = ListViewModel.Instance;
+            string PokemonName =searchBar.Text;
+           
+            vm.addPokemonWithName(PokemonName);
+
+           
         }
     }
 }
