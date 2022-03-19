@@ -75,9 +75,11 @@ namespace PokePiplup.ModelView
                 {
                     ID = pokemon.Id,
                     Nom = species.Names.Find(name => name.Language.Name.Equals("fr")).Name,
-                    Type = pokemon.Types[0].Type.Name,
-                    Type2 = type2,
-                    image = pokemon.Sprites.FrontDefault,
+                    Type = TypeFrancais(pokemon.Types[0].Type.Name),
+                    Type2 = TypeFrancais(type2),
+                    CouleurType=CouleurPrincipalPokemon(TypeFrancais(pokemon.Types[0].Type.Name)),
+                    Image = pokemon.Sprites.FrontDefault,
+                    ImageShiny = pokemon.Sprites.FrontShiny,
                     Description = species.FlavorTextEntries.Find((flavor)=>flavor.Language.Name=="fr").FlavorText,
                     HP = pokemon.Stats[0].BaseStat,
                     ATK = pokemon.Stats[1].BaseStat,
@@ -101,22 +103,6 @@ namespace PokePiplup.ModelView
                 MyPokemon pokemon = list[i];
                 ListeofPokemon.Add(pokemon);
             }
-        }
-
-        public List<string> GetPokemonApi(string NomPokemon)
-        {
-            PokeApiClient pokeClient = new PokeApiClient();
-
-            Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(NomPokemon)).Result;
-            PokemonSpecies pokemonSpecies = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
-            //Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(NomPokemon)).Result;
-
-            List<string> myList = new List<string>();
-            myList.Add(pokemonSpecies.Names.Find(name => name.Language.Name.Equals("fr")).Name);
-            myList.Add(pokemon.Sprites.FrontDefault);
-
-
-            return myList;
         }
 
 

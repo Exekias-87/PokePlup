@@ -25,7 +25,7 @@
 				            AlignItems="Center"
 				            JustifyContent="Center"
 							Direction="Column">
-					<Image Source="{Binding image}" WidthRequest="150" HeightRequest="150" />
+					<Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" />
 					<Label Text="{Binding Nom}"
 						   TextColor="WhiteSmoke"
 					       FontSize="Large"

@@ -33,14 +33,14 @@ namespace PokePiplup.Page
             }
             else
             {
-                Type2 = type2.SelectedItem.ToString().ToLower();
+                Type2 = type2.SelectedItem.ToString();
             }
 
 
             MyPokemon pokemon = new MyPokemon
             {
                Nom = nom.Text,
-               Type = type.SelectedItem.ToString().ToLower(),
+               Type = type.SelectedItem.ToString(),
                Type2 = Type2,
                Description = description.Text,
                HP = (int)hp.Value,
@@ -69,5 +69,16 @@ namespace PokePiplup.Page
             sdef.Value = 1;
             def.Value = 1;
         }
+
+
+        /*private async void OnPickImageClick(object sender, EventArgs args)
+        {
+            this.Image = await CrossMedia.Current.PickPhotoAsync();
+
+            if (this.Image == null) return;
+
+            imagePicker.Source = ImageSource.FromStream(() => this.Image.GetStream());
+        }*/
+
     }
 }

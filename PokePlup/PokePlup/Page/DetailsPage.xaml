@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokePlup.Page.DetailsPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#403f3e">
+        <StackLayout  BackgroundColor="{Binding CouleurType}">
 
 	        <Label Text="{Binding Nom}"
                    HorizontalTextAlignment="Center"
@@ -11,7 +11,7 @@
                    Margin="30, 30, 30, 10"
                    TextColor="WhiteSmoke"/>
             
-            <Image Source="{Binding image}"
+            <Image Source="{Binding Image}"
                    WidthRequest="220"
                    HeightRequest="220"/>
             
