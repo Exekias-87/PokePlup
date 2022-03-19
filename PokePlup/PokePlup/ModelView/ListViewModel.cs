@@ -56,33 +56,39 @@ namespace PokePiplup.ModelView
 
             PokeApiClient pokeClient = new PokeApiClient();
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
-            //String nameEnglish = species.Names.Find(myname => myname.Language.Name.Equals("en")).Name,
 
-            string type2 = "";
-            Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(name));
-            PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
-            if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
-
-            MyPokemon MyPokemon = new MyPokemon
+            try
             {
-                ID = pokemon.Id,
-                Nom = species.Names.Find(myname => myname.Language.Name.Equals("fr")).Name,
-                Type = TypeFrancais(pokemon.Types[0].Type.Name),
-                Type2 = TypeFrancais(type2),
-                CouleurType = CouleurPrincipalPokemon(TypeFrancais(pokemon.Types[0].Type.Name)),
-                Image = pokemon.Sprites.FrontDefault,
-                ImageShiny = pokemon.Sprites.FrontShiny,
-                Description = species.FlavorTextEntries.Find((flavor) => flavor.Language.Name == "fr").FlavorText,
-                HP = pokemon.Stats[0].BaseStat,
-                ATK = pokemon.Stats[1].BaseStat,
-                DEF = pokemon.Stats[2].BaseStat,
-                SATK = pokemon.Stats[3].BaseStat,
-                SDEF = pokemon.Stats[4].BaseStat,
-            };
+                 string type2 = "";
+                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(name));
+                PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
+                if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
+
+                MyPokemon MyPokemon = new MyPokemon
+                {
+                    ID = pokemon.Id,
+                    Nom = species.Names.Find(myname => myname.Language.Name.Equals("fr")).Name,
+                    Type = TypeFrancais(pokemon.Types[0].Type.Name),
+                    Type2 = TypeFrancais(type2),
+                    CouleurType = CouleurPrincipalPokemon(TypeFrancais(pokemon.Types[0].Type.Name)),
+                    Image = pokemon.Sprites.FrontDefault,
+                    ImageShiny = pokemon.Sprites.FrontShiny,
+                    Description = species.FlavorTextEntries.Find((flavor) => flavor.Language.Name == "fr").FlavorText,
+                    HP = pokemon.Stats[0].BaseStat,
+                    ATK = pokemon.Stats[1].BaseStat,
+                    DEF = pokemon.Stats[2].BaseStat,
+                    SATK = pokemon.Stats[3].BaseStat,
+                    SDEF = pokemon.Stats[4].BaseStat,
+                };
 
 
-            await pokemonDB.SaveItemAsync(MyPokemon);
-            ListeofPokemon.Add(MyPokemon);
+                await pokemonDB.SaveItemAsync(MyPokemon);
+                ListeofPokemon.Add(MyPokemon);
+            }catch (Exception ex)
+            {
+
+            }
+           
         }
 
         public async void fillPokemonDatabase()
