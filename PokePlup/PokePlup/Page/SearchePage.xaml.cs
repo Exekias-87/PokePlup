@@ -29,10 +29,6 @@ namespace PokePlup.Page
             
             NamePoke.Text = PokemonName;
             ImagePoke.Source = PokemonImage;
-
-            
-            
-
         }
     }
 }
