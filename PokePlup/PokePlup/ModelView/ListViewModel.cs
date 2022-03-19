@@ -104,6 +104,73 @@ namespace PokePiplup.ModelView
                 ListeofPokemon.Add(pokemon);
             }
         }
+        public List<string> GetPokemonApi(string NomPokemon)
+        {
+            PokeApiClient pokeClient = new PokeApiClient();
+
+            Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(NomPokemon)).Result;
+            PokemonSpecies pokemonSpecies = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
+            //Pokemon pokemon = Task.Run(() => pokeClient.GetResourceAsync<Pokemon>(NomPokemon)).Result;
+
+            List<string> myList = new List<string>();
+            myList.Add(pokemonSpecies.Names.Find(name => name.Language.Name.Equals("fr")).Name);
+            myList.Add(pokemon.Sprites.FrontDefault);
+
+
+            return myList;
+        }
+
+        public string TypeFrancais(string TypeAnglais)
+        {
+            switch (TypeAnglais)
+            {
+                case "normal": return "Normal";
+                case "poison": return "Poison";
+                case "grass": return "Plante";
+                case "psychic": return "Psy";
+                case "ground": return "Sol";
+                case "ice": return "Glace";
+                case "fire": return "Feu";
+                case "rock": return "Roche";
+                case "dragon": return "Dragon";
+                case "water": return "Eau";
+                case "bug": return "Insecte";
+                case "dark": return "Tenebre";
+                case "fighting": return "Combat";
+                case "ghost": return "Spectre";
+                case "steel": return "Acier";
+                case "flying": return "Vol";
+                case "electric": return "Electrik";
+                case "fairy": return "Fee";
+                default: return null;
+            }
+        }
+
+        public string CouleurPrincipalPokemon(string Type)
+        {
+            switch (Type)
+            {
+                case "Normal": return "#ADA594";
+                case "Poison": return "#B55AA5";
+                case "Plante": return "#7BCE52";
+                case "Psy": return "#FF73A5";
+                case "Sol": return "#D6B55A";
+                case "Glace": return "#5ACEE7";
+                case "Feu": return "#F75231";
+                case "Roche": return "#BDA55A";
+                case "Dragon": return "#8858F6";
+                case "Eau": return "#399CFF";
+                case "Insecte": return "#ADBD21";
+                case "Tenebre": return "#735A4A";
+                case "Combat": return "#A55239";
+                case "Spectre": return "#6363B5";
+                case "Acier": return "#ADADC6";
+                case "Vol": return "#9CADF7";
+                case "Electrik": return "#FFC631";
+                case "Fee": return "#E09AE3";
+                default: return null;
+            }
+        }
 
 
     }

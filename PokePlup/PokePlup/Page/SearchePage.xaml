@@ -17,9 +17,9 @@
                     WidthRequest="200"
                     Clicked="Rechercher"/>
 
-            <Label Text="Résultat" HorizontalOptions="Center" FontSize="25" Margin="0,50,0,0" TextColor="White" FontAttributes="Bold"/>
-            <Label HorizontalOptions="Center" x:Name="NamePoke" FontSize="20" Margin="0,50,0,0" TextColor="White"/>
-            <Image x:Name="ImagePoke"/>
+            <Label Text="Résultat" HorizontalOptions="Center" FontSize="28" Margin="0,50,0,0" TextColor="White" FontAttributes="Bold"/>
+            <Label HorizontalOptions="Center" x:Name="NamePoke" FontSize="23" Margin="0,50,0,0" TextColor="White"/>
+            <Image x:Name="ImagePoke" WidthRequest="100" HeightRequest="100"/>
         </StackLayout>
         
   </ContentPage.Content>
