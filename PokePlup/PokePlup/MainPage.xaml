@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:page="clr-namespace:PokePiplup.Page"
+       xmlns:page1="clr-namespace:PokePlup.Page"
        x:Class="PokePiplup.MainPage"
        BackgroundColor="DodgerBlue"
        TitleColor="white"
@@ -23,6 +24,12 @@
 		              x:Name="LIST">
 			<page:ListPage/>
 		</ShellContent>
-	</TabBar>
+        <ShellContent Icon="search.png" Title="Rechercher"
+		              Route="SEARCH"
+		              x:Name="SEARCH">
+            <page1:SearchePage/>
+        </ShellContent>
+
+    </TabBar>
 
 </Shell>

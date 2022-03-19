@@ -68,6 +68,7 @@
                         Padding="15"
                         BackgroundColor="#bf8a3d"
 	                    CornerRadius="100"/>
+            
         </StackLayout>
 
     </ContentPage.Content>
