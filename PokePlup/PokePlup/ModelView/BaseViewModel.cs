@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace PokePiplup.ModelView
 {
+    // View Model qui sert de base a notre autre view model
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

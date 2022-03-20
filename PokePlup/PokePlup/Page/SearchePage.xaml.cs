@@ -20,6 +20,7 @@ namespace PokePlup.Page
            
         }
 
+        // Evenement bouton rechercher : affiche le nom et la photo du pokémon cherché
         private void Rechercher(object sender, EventArgs e)
         {
             var vm = ListViewModel.Instance;
@@ -29,6 +30,8 @@ namespace PokePlup.Page
             NamePoke.Text = PokemonName;
             ImagePoke.Source = PokemonImage;
         }
+
+        // Evenement bouton Ajout : ajoute le pokemon rechercher a la bd
         private void AjoutPokemonBd(object sender, EventArgs e)
         {
             var vm = ListViewModel.Instance;
