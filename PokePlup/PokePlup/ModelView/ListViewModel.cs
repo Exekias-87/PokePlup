@@ -59,13 +59,14 @@ namespace PokePiplup.ModelView
         {
 
             PokeApiClient pokeClient = new PokeApiClient();
-            //PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
-            //String nameEnglish = species.Names.Find(myname => myname.Language.Name.Equals("en")).Name,
+            PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
 
-            string type2 = "";
-            Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(name));
-            PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
-            if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
+            try
+            {
+                 string type2 = "";
+                Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(name));
+                PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
+                if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
 
             //Création d'un pokémon à partir des données de l'api
             MyPokemon MyPokemon = new MyPokemon
@@ -85,7 +86,14 @@ namespace PokePiplup.ModelView
                 SDEF = pokemon.Stats[4].BaseStat,
             };
 
-            ListeofPokemon.Add(MyPokemon);
+
+                await pokemonDB.SaveItemAsync(MyPokemon);
+                ListeofPokemon.Add(MyPokemon);
+            }catch (Exception ex)
+            {
+
+            }
+           
         }
 
 
