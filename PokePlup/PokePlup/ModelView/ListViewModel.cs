@@ -105,7 +105,7 @@ namespace PokePiplup.ModelView
 
             var random = new Random();
 
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 string type2="";
                 Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(random.Next(1, 908)));

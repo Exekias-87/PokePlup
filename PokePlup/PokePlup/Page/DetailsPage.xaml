@@ -11,10 +11,15 @@
                    Margin="30, 30, 30, 10"
                    TextColor="WhiteSmoke"/>
             
-            <Image Source="{Binding Image}"
-                   WidthRequest="220"
-                   HeightRequest="220"/>
-            
+            <StackLayout Orientation="Horizontal" Margin="0, 0, 50, 0">
+                <Image Source="{Binding Image}"
+                   WidthRequest="200"
+                   HeightRequest="200"/>
+                <Image Source="{Binding ImageShiny}"
+                   WidthRequest="200"
+                   HeightRequest="200"/>
+            </StackLayout>
+
             <FlexLayout JustifyContent="SpaceEvenly"
                         Margin="10, 10, 10, 20">
                 <Label Text="{Binding Type}" HorizontalTextAlignment="Center" FontSize="22" TextColor="WhiteSmoke"/>

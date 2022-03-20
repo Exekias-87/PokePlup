@@ -18,8 +18,6 @@ namespace PokePiplup.Page
 
         public AddPage()
         {
-            type.SelectedItem = "NORMAL";
-            type2.SelectedItem = "AUCUN";
             InitializeComponent();
             
         }
@@ -56,6 +54,7 @@ namespace PokePiplup.Page
                SDEF = (int)sdef.Value,
            };
             pokemon.Image = this.Image == null ? currentPokemon.Image : this.Image.Path;
+            //pokemon.ImageShiny;
 
             //Message pop-ip nous indiquant 
             await DisplayAlert("Pokemon ajouté : ", nom.Text + " " , "OK");
