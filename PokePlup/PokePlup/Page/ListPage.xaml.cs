@@ -23,7 +23,7 @@ namespace PokePiplup.Page
             BindingContext = ListViewModel.Instance;            
         }
 
-
+        //Méthode permettant lors d'un appui sur un pokémon de la liste, de consulter une page de détail sur le pokémon en question
         public async void SeeMore(object sender, SelectionChangedEventArgs e)
         {
             MyPokemon pokemon = (e.CurrentSelection.FirstOrDefault() as MyPokemon);

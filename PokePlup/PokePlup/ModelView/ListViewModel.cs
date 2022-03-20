@@ -26,12 +26,14 @@ namespace PokePiplup.ModelView
             set => SetValue(value);
         }
 
+        //On initialise la liste
         public ListViewModel()
         {
             ListeofPokemon = new ObservableCollection<MyPokemon>();
             InitList();
         }
 
+        //Là, on regarde si une base de données existe dans le téléphone, si oui alors on récupère une liste à partir de la bd, sinon on en créer une et récupère la liste ensuite
         public async void InitList()
         {
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
@@ -46,11 +48,13 @@ namespace PokePiplup.ModelView
             }
         }
 
+        //Méthode qui permet d'ajouter un pokémon dans la liste
         public void addPokemon(MyPokemon pokemon)
         {
             ListeofPokemon.Add(pokemon);
         }
 
+        //Méthode qui permet d'ajouter un pokémon à partir de son nom en faisant une requête sur l'api
         public async void addPokemonWithName(string name)
         {
 
@@ -63,6 +67,7 @@ namespace PokePiplup.ModelView
             PokemonSpecies species = Task.Run(() => pokeClient.GetResourceAsync(pokemon.Species)).Result;
             if (pokemon.Types.Count > 1) type2 = pokemon.Types[1].Type.Name;
 
+            //Création d'un pokémon à partir des données de l'api
             MyPokemon MyPokemon = new MyPokemon
             {
                 ID = pokemon.Id,
@@ -83,6 +88,8 @@ namespace PokePiplup.ModelView
             ListeofPokemon.Add(MyPokemon);
         }
 
+
+        //Création de la base de données et récupérationd des pokémons dans la liste
         public async void fillPokemonDatabase()
         {
             PokeApiClient pokeClient = new PokeApiClient();
@@ -118,7 +125,7 @@ namespace PokePiplup.ModelView
             this.fillPokemonList();
         }
 
-
+        //Récupértation des pokémons dans la liste
         public async void fillPokemonList()
         {
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
@@ -130,6 +137,8 @@ namespace PokePiplup.ModelView
                 ListeofPokemon.Add(pokemon);
             }
         }
+
+        //Méthode qui permet de faire une requête à l'api afin de voir si le pokémon ayant ce nom existe
         public List<string> GetPokemonApi(string NomPokemon)
         {
             PokeApiClient pokeClient = new PokeApiClient();
@@ -148,13 +157,14 @@ namespace PokePiplup.ModelView
             }catch (Exception ex)
             {
                 myList.Add("Pokemon non existant");
-                myList.Add("Image de pokemon non existan");
+                myList.Add("Image de pokemon non existant");
                 return myList;
            
             }
            
         }
 
+        //Méthode qui transforme les types en français
         public string TypeFrancais(string TypeAnglais)
         {
             switch (TypeAnglais)
@@ -181,6 +191,7 @@ namespace PokePiplup.ModelView
             }
         }
 
+        //Méthode qui donne la couleur correspondant au type
         public string CouleurPrincipalPokemon(string Type)
         {
             switch (Type)

@@ -18,18 +18,20 @@ namespace PokePiplup.Page
 
         public AddPage()
         {
-
-            InitializeComponent();
             type.SelectedItem = "NORMAL";
             type2.SelectedItem = "AUCUN";
+            InitializeComponent();
+            
         }
 
+        //Méthode qui permet d'ajouter un pokémon dans la liste ainsi que dans la base en se servant du formulaire
         public async void AddPokemonAsync(object sender, EventArgs e)
         {
             var vm= ListViewModel.Instance;
             PokePlupDatabase pokemonDB = await PokePlupDatabase.Instance;
             string Type2;
 
+            //Ici, on regarde que le pokémon à 1 ou 2 types, afin de voir si on le récupère, et ainsi évité des dépassement de la taille du tableau qui contient les types
             if (type2.SelectedItem.ToString().ToLower() == "aucun")
             {
                 Type2 = null;
@@ -39,7 +41,7 @@ namespace PokePiplup.Page
                 Type2 = type2.SelectedItem.ToString();
             }
 
-
+            //On crée un pokémon avec les information du formulaire
             MyPokemon pokemon = new MyPokemon
             {
                Nom = nom.Text,
@@ -55,15 +57,19 @@ namespace PokePiplup.Page
            };
             pokemon.Image = this.Image == null ? currentPokemon.Image : this.Image.Path;
 
-
+            //Message pop-ip nous indiquant 
             await DisplayAlert("Pokemon ajouté : ", nom.Text + " " , "OK");
             await pokemonDB.SaveItemAsync(pokemon); 
             vm.addPokemon(pokemon);
 
+            //On redirige vers la page "list"
             await Shell.Current.GoToAsync($"//List", true);
 
+            //On réinitialise le formulaire
             RenitializeValue();
         }
+
+        //Méthode qui permet de remettre à 0 le formulaire
         public void RenitializeValue()
         {
             nom.Text = null;
@@ -78,6 +84,7 @@ namespace PokePiplup.Page
             imagePicker.Source = "image.png";
         }
 
+        //Méthode permettant de trouver la couleur en fonction du type du pokémon
         public string CouleurPrincipalPokemon(string Type)
         {
             switch (Type)
@@ -104,6 +111,7 @@ namespace PokePiplup.Page
             }
         }
 
+        //Méthode permettant de choisir une photo dans sa galerie
         private async void OnPickImageClick(object sender, EventArgs args)
         {
             this.Image = await CrossMedia.Current.PickPhotoAsync();

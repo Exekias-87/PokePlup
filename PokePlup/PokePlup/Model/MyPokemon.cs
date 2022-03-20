@@ -5,6 +5,7 @@ using SQLite;
 
 namespace PokePlup.Model
 {
+    //Model de notre pokémon, il possède des informations de bases, ainsi que quelques autres plus spécifiques
     public class MyPokemon
     {
         [PrimaryKey,AutoIncrement]

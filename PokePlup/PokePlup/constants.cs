@@ -6,6 +6,7 @@ using System.IO;
 
 namespace PokePlup
 {
+    //Fichier de constante nécesaire à la base de données
     public static class constants
     {
         public const string DatabaseFilename = "TodoSQLite.db3";
