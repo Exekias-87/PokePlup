@@ -16,7 +16,7 @@
                    FontSize="22"
                    HorizontalTextAlignment="Center"
                    Margin="0, 70, 0, 30"/>
-            <Label Text="Consulter et ajoutées d'inombrables pokémons"
+            <Label Text="Consulter et ajouter d'inombrables pokémons"
 			       TextColor="Yellow"
 			       FontSize="20"
 			       HorizontalTextAlignment="Center"/>
